@@ -1,11 +1,17 @@
 #!/bin/sh
 
-echo ---------------------
-echo "TFS -> GIT DIRECT"
-echo ---------------------
+echo --------------------------------------------------------------
+echo "  TFS -> GIT DIRECT"
+echo
+echo "    Usage: $0 <CONFIG_FILE_PATH>"
+echo "    For a sample config, check config.sh"
+echo
+echo "    Note: unmounting TableauFS requires the usage of SUDO..."
+echo --------------------------------------------------------------
+echo
 
-echo Loading config...
-. ./config.sh
+echo Loading config: $1...
+. $1
 
 DIRECT_MOUNT_POINT=${REPO_PATH}/${TFS_MOUNT_DIR}
 

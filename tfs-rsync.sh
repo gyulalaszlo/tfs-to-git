@@ -1,12 +1,19 @@
 #!/bin/sh
 
-echo ---------------------
-echo "TFS -> RSYNC -> GIT"
-echo ---------------------
+echo --------------------------------------------------------------
+echo "  TFS -> RSYNC -> GIT"
+echo
+echo "    Usage: $0 <CONFIG_FILE_PATH>"
+echo "    For a sample config, check config.sh"
+echo
+echo "    Note: unmounting TableauFS requires the usage of SUDO..."
+echo --------------------------------------------------------------
+echo
 
 
-echo Loading config...
-. ./config.sh
+
+echo Loading config $1...
+. $1
 
 echo Creating mount point...
 mkdir -p ${TFS_MOUNT_POINT}
